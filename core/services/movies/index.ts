@@ -2,6 +2,11 @@ import { axiosClient } from "@/core/api/axios.api";
 import { MovieMapper } from "@/core/utils/mappers";
 import { Movie, MoviesResponse } from "@/types/movies";
 
+interface Options {
+  page?: number;
+  limit?: number;
+}
+
 export const getNowPlaying = async (): Promise<Movie[]> => {
   try {
     const { data } = await axiosClient.get<MoviesResponse>('/now_playing');
@@ -13,9 +18,14 @@ export const getNowPlaying = async (): Promise<Movie[]> => {
   }
 } 
 
-export const getPopularMovies = async (): Promise<Movie[]> => {
+export const getPopularMovies = async ({ page = 1, limit = 10 }: Options): Promise<Movie[]> => {
   try {
-    const { data } = await axiosClient.get<MoviesResponse>('/popular');
+    const { data } = await axiosClient.get<MoviesResponse>('/popular', {
+      params: {
+        page,
+        limit,
+      },
+    });
     const movies = data.results.map(MovieMapper.fromMovieResponseToMovie);
     return movies
   } catch (error) { 
@@ -24,9 +34,14 @@ export const getPopularMovies = async (): Promise<Movie[]> => {
   }
 } 
 
-export const getTopRatedMovies = async (): Promise<Movie[]> => {
+export const getTopRatedMovies = async ({ page = 1, limit = 10 }: Options): Promise<Movie[]> => {
   try {
-    const { data } = await axiosClient.get<MoviesResponse>('/top_rated');
+    const { data } = await axiosClient.get<MoviesResponse>('/top_rated', {
+      params: {
+        page,
+        limit,
+      },
+    });
     const movies = data.results.map(MovieMapper.fromMovieResponseToMovie);
     return movies
   } catch (error) { 
@@ -35,9 +50,14 @@ export const getTopRatedMovies = async (): Promise<Movie[]> => {
   }
 } 
 
-export const getUpcomingMovies = async (): Promise<Movie[]> => {
+export const getUpcomingMovies = async ({ page = 1, limit = 10 }: Options): Promise<Movie[]> => {
   try {
-    const { data } = await axiosClient.get<MoviesResponse>('/upcoming');
+    const { data } = await axiosClient.get<MoviesResponse>('/upcoming', {
+      params: {
+        page,
+        limit,
+      },
+    });
     const movies = data.results.map(MovieMapper.fromMovieResponseToMovie);
     return movies
   } catch (error) { 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const axios_client = axios.create({
+export const axiosClient = axios.create({
   baseURL: process.env.EXPO_PUBLIC_API_URL,
   params: {
     language: 'es-MX',

@@ -1,7 +1,9 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useFonts } from 'expo-font';
 import { Slot } from 'expo-router';
 import 'react-native-reanimated';
 
+const queryClient = new QueryClient()
 
 export default function RootLayout() {
 
@@ -15,6 +17,8 @@ export default function RootLayout() {
   }
 
   return (
-    <Slot />
+    <QueryClientProvider client={queryClient}>
+      <Slot />
+    </QueryClientProvider>
   );
 }

@@ -1,4 +1,14 @@
 export interface Movie {
+  id: number;
+  title: string;
+  description: string;
+  releaseDate: Date;
+  rating: number;
+  poster: string | null;
+  backdrop: string | null;
+}
+
+export interface MovieResponse {
   adult: boolean;
   backdrop_path: string | null;
   genre_ids: number[];
@@ -21,7 +31,7 @@ export interface MoviesResponse {
     minimum: string;
   };
   page: number;
-  results: Movie[];
+  results: MovieResponse[];
   total_pages: number;
   total_results: number;
 }

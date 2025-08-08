@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import 'react-native-reanimated';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import './global.css';
 
@@ -20,11 +21,16 @@ export default function RootLayout() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Stack 
-        screenOptions={{
-          headerShown: false,
-        }}
-      />
+      <SafeAreaProvider>
+        <SafeAreaView className='flex-1' edges={['left', 'right']}>
+          <Stack 
+            screenOptions={{
+              headerShown: false,
+              headerShadowVisible: false,
+            }}
+          />
+        </SafeAreaView>
+      </SafeAreaProvider>
     </QueryClientProvider>
   );
 }

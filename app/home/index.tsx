@@ -1,8 +1,10 @@
 import { useMovies } from '@/hooks/useMovies';
 import React from 'react';
 import { ActivityIndicator, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const HomeScreen = () => {
+  const safeArea = useSafeAreaInsets();
   const { moviesQuery } = useMovies();
   const { data: movies, isLoading, error } = moviesQuery;
 
@@ -27,7 +29,7 @@ const HomeScreen = () => {
   }
 
   return (
-    <View className='flex-1 items-center justify-center' >
+    <View className='flex-1 bg-white' style={{ paddingTop: safeArea.top }}>
       <Text className='text-red-500 text-2xl font-bold'>Movie App</Text>
       <Text className='text-gray-600 mt-2'>Movies loaded: {movies?.length || 0}</Text>
     </View>

@@ -1,5 +1,5 @@
 export interface Movie {
-  id: number;
+  id: string;
   title: string;
   description: string;
   releaseDate: Date;
@@ -12,7 +12,7 @@ export interface MovieResponse {
   adult: boolean;
   backdrop_path: string | null;
   genre_ids: number[];
-  id: number;
+  id: string;
   original_language: string;
   original_title: string;
   overview: string;

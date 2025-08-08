@@ -3559,6 +3559,16 @@ expo-modules-core@2.5.0:
   dependencies:
     invariant "^2.2.4"
 
+expo-navigation-bar@~4.2.7:
+  version "4.2.7"
+  resolved "https://registry.yarnpkg.com/expo-navigation-bar/-/expo-navigation-bar-4.2.7.tgz#ad23634813fe7d732619277d8689349b077fea1e"
+  integrity sha512-UjLeC1V/Qg7dwRihriDJritz0+OhGPiCfmmrilqCfna7D6ZSb5DjsOdHjWm/dUnUaHgOsXwOL1DCRhHn6GqmiA==
+  dependencies:
+    "@react-native/normalize-colors" "0.79.5"
+    debug "^4.3.2"
+    react-native-edge-to-edge "1.6.0"
+    react-native-is-edge-to-edge "^1.1.6"
+
 expo-router@~5.1.4:
   version "5.1.4"
   resolved "https://registry.yarnpkg.com/expo-router/-/expo-router-5.1.4.tgz#37d611b35a474531a95638c2b5cc19b10fe13189"
@@ -5954,6 +5964,22 @@ react-native-webview@13.13.5:
   dependencies:
     escape-string-regexp "^4.0.0"
     invariant "2.2.4"
+
+react-native-worklets@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-worklets/-/react-native-worklets-0.4.1.tgz#563d39160195101d9cf236b54b383d6950508263"
+  integrity sha512-QXAMZ8jz0sLEoNrc3ej050z6Sd+UJ/Gef4SACeMuoLRinwHIy4uel7XtMPJZMqKhFerkwXZ7Ips5vIjnNyPDBA==
+  dependencies:
+    "@babel/plugin-transform-arrow-functions" "^7.0.0-0"
+    "@babel/plugin-transform-class-properties" "^7.0.0-0"
+    "@babel/plugin-transform-classes" "^7.0.0-0"
+    "@babel/plugin-transform-nullish-coalescing-operator" "^7.0.0-0"
+    "@babel/plugin-transform-optional-chaining" "^7.0.0-0"
+    "@babel/plugin-transform-shorthand-properties" "^7.0.0-0"
+    "@babel/plugin-transform-template-literals" "^7.0.0-0"
+    "@babel/plugin-transform-unicode-regex" "^7.0.0-0"
+    "@babel/preset-typescript" "^7.16.7"
+    convert-source-map "^2.0.0"
 
 react-native@0.79.5:
   version "0.79.5"

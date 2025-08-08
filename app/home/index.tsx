@@ -1,3 +1,4 @@
+import MainSlideshot from '@/components/main-slideshot';
 import { useMovies } from '@/hooks/useMovies';
 import React from 'react';
 import { ActivityIndicator, Text, View } from 'react-native';
@@ -31,7 +32,7 @@ const HomeScreen = () => {
   return (
     <View className='flex-1 bg-white' style={{ paddingTop: safeArea.top }}>
       <Text className='text-red-500 text-2xl font-bold'>Movie App</Text>
-      <Text className='text-gray-600 mt-2'>Movies loaded: {movies?.length || 0}</Text>
+      <MainSlideshot movies={movies || []} />
     </View>
   )
 }

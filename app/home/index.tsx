@@ -57,24 +57,27 @@ const HomeScreen = () => {
       {/* Popular movies */}
       <View className='pt-6'>
         <MovieHorizontalList 
-          movies={moviesPopular || []} 
-          title='Popular movies'
+          movies={moviesPopular?.pages.flat() || []} 
+          title='Popular movies'  
+          loadNextPage={popularMoviesQuery.fetchNextPage}
         />
       </View>
 
       {/* Top rated movies */}
       <View className='pt-6'>
         <MovieHorizontalList 
-          movies={moviesTopRated || []} 
+          movies={moviesTopRated?.pages.flat() || []} 
           title='Top rated movies'
+          loadNextPage={topRatedMoviesQuery.fetchNextPage}
         />
       </View>
 
       {/* Upcoming movies */}
       <View className='pt-6'>
         <MovieHorizontalList 
-          movies={moviesUpcoming || []} 
+          movies={moviesUpcoming?.pages.flat() || []} 
           title='Upcoming movies'
+          loadNextPage={upcomingMoviesQuery.fetchNextPage}
         />
       </View>
     </View>

@@ -42,10 +42,12 @@ const MainSlideshot = ({ movies }: MainSlideshotProps) => {
             alignItems: 'center',
           }}
           mode='parallax'
+          loop={true}
           modeConfig={{
             parallaxScrollingScale: 0.9,
             parallaxScrollingOffset: 50,
           }}
+
           defaultIndex={1}
         />
       </ViewMoti>
